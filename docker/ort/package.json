@@ -1,0 +1,10 @@
+{
+  "name": "gamenest-ort",
+  "version": "1.0.0",
+  "private": true,
+  "description": "onnxruntime-node for GameNest's room servers: the chat filter (every server), Word Spies' bots and Chess's Maia bots. The CPU build is bundled in the npm package; its install script (the CUDA download) is never run.",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "onnxruntime-node": "1.30.0"
+  }
+}

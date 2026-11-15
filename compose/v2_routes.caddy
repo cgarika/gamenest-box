@@ -1,0 +1,55 @@
+	# >>> GameNest 2.0 routes: written by box_deploy.sh (gamenest-box compose/v2_routes.caddy); the rest of this file is the box's own >>>
+	# Never public: any internal route of a room server or the wallet, the wallet's admin, the chess server's stats read-outs.
+	@gn2_internal path_regexp gn2_internal ^/(?:[^/]+/)*internal(?:/|$)
+	handle @gn2_internal {
+		respond 404
+	}
+	@gn2_private path /wallet/v1/admin /wallet/v1/admin/* /chess/stats/summary /chess/stats/crashes /chess/stats/reports
+	handle @gn2_private {
+		respond 404
+	}
+	# The Nest Wallet: it checks the /wallet prefix itself, so nothing is stripped; the client's address is Cloudflare's CF-Connecting-IP.
+	@gn2_wallet path /wallet /wallet/*
+	handle @gn2_wallet {
+		reverse_proxy wallet:3920 {
+			header_up X-Forwarded-For {http.request.header.CF-Connecting-IP}
+		}
+	}
+	# The nine games v1 never had. The seven v1 games keep the box's own routes below, which now reach their v2 servers by the same names.
+	@gn2_golf path /golf /golf/*
+	handle @gn2_golf {
+		reverse_proxy golf:3000
+	}
+	@gn2_four path /four /four/*
+	handle @gn2_four {
+		reverse_proxy four:3000
+	}
+	@gn2_chess path /chess /chess/*
+	handle @gn2_chess {
+		reverse_proxy chess:3000
+	}
+	@gn2_bowling path /bowling /bowling/*
+	handle @gn2_bowling {
+		reverse_proxy bowling:3000
+	}
+	@gn2_brawl path /brawl /brawl/*
+	handle @gn2_brawl {
+		reverse_proxy brawl:3000
+	}
+	@gn2_carrom path /carrom /carrom/*
+	handle @gn2_carrom {
+		reverse_proxy carrom:3000
+	}
+	@gn2_soccer path /soccer /soccer/*
+	handle @gn2_soccer {
+		reverse_proxy soccer:3000
+	}
+	@gn2_pool path /pool /pool/*
+	handle @gn2_pool {
+		reverse_proxy pool:3000
+	}
+	@gn2_poker path /poker /poker/* /blackjack /blackjack/*
+	handle @gn2_poker {
+		reverse_proxy poker:3000
+	}
+	# <<< GameNest 2.0 routes <<<

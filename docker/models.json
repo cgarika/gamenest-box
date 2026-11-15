@@ -1,0 +1,16 @@
+[
+  { "for": "the chat filter (moderation.js, every server): unitary/toxic-bert as Xenova's int8 ONNX, Apache-2.0",
+    "repo": "Xenova/toxic-bert", "rev": "65cbc2607cb7fad64f98d1e8a5a3d1f8577895fd", "path": "onnx/model_quantized.onnx",
+    "dest": "toxic-bert/model_quantized.onnx", "size": 110720344, "sha256": "620012c9bed13e3c58b9c959d160d955ff033a1a27528212b9da5b0aa4ac3f73" },
+  { "repo": "Xenova/toxic-bert", "rev": "65cbc2607cb7fad64f98d1e8a5a3d1f8577895fd", "path": "vocab.txt",
+    "dest": "toxic-bert/vocab.txt", "size": 231508, "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3" },
+  { "repo": "Xenova/toxic-bert", "rev": "65cbc2607cb7fad64f98d1e8a5a3d1f8577895fd", "path": "config.json",
+    "dest": "toxic-bert/config.json", "size": 986, "sha256": "e2c6937717530ce48ea753182c5558c8b285a0e1dd7824759d63a81adce28447" },
+  { "repo": "Xenova/toxic-bert", "rev": "65cbc2607cb7fad64f98d1e8a5a3d1f8577895fd", "path": "tokenizer_config.json",
+    "dest": "toxic-bert/tokenizer_config.json", "size": 366, "sha256": "9261e7d79b44c8195c1cada2b453e55b00aeb81e907a6664974b4d7776172ab3" },
+  { "for": "Word Spies' bots (spies_bot.js): sentence-transformers/all-MiniLM-L6-v2, its int8 ONNX, Apache-2.0",
+    "repo": "sentence-transformers/all-MiniLM-L6-v2", "rev": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41", "path": "onnx/model_qint8_arm64.onnx",
+    "dest": "spies/model_qint8_arm64.onnx", "size": 23026053, "sha256": "4278337fd0ff3c68bfb6291042cad8ab363e1d9fbc43dcb499fe91c871902474" },
+  { "repo": "sentence-transformers/all-MiniLM-L6-v2", "rev": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41", "path": "vocab.txt",
+    "dest": "spies/vocab.txt", "size": 231508, "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3" }
+]
