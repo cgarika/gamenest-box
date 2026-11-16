@@ -7,7 +7,7 @@
 # Never here: TEST_HOOKS, the LAN's ports, any secret. Every service's data is a folder of its own under /home/ubuntu/data.
 services:
   ludo:
-    image: gamenest-v2/ludo:2cb518d8a92f
+    image: gamenest-v2/ludo:475cfd5b80c0
     build:
       context: /home/ubuntu/gamenest-v2/src/ludo-rooms
       args:
